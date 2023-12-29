@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs")  %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Blog</title>
+</head>
+<body>
+  <h1 class="heading">Write Your Thoughts</h1>
+  <ol class="orderList">
+    <br>
+    <% posts.forEach((post, index) => { %>
+      <li class="list">
+        <h2 class="list"><%= post.title %></h2>
+        <p class="list"><%= post.content %></p>
+        <a href="/edit/<%= index %>">Edit</a> | <a href="/delete/<%= index %>">Delete</a>
+      <br> <br>
+      </li>
+    <% }); %>
+  </ol>
+  <a href="/create">Create New Post + </a>
+</body>
+</html>
+
+
+<!-- <%- include("partials/footer.ejs")  %> -->

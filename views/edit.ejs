@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs")  %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title> Edit Here</title>
+</head>
+<body>
+  <h1>Be +ve </h1>
+    <form action="/edit/<%= postId  %>" class="myForm" method="post">
+
+        <label for="title" > Title of Your Blog</label>
+        <input type="text" id="title" name="title" required value=<%= post.title %>>
+<br>
+        <label for="content" > Start Writing</label>
+        <textarea name="content" id="content" cols="30" rows="10" required> <%= post.content %></textarea>
+<br>
+        <button type="submit" id = "submit"> Save Changes </button>
+    </form>
+</body>
+</html>
+
+
+<%- include("partials/footer.ejs")  %>
